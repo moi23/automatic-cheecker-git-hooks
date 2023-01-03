@@ -2,6 +2,7 @@
 
 # O nome da pasta a ser observada
 folder_to_watch="./android"
+echo "Rodando"
 
 # Inicialmente, verificamos se a pasta existe
 if [ ! -d "$folder_to_watch" ]; then
@@ -22,4 +23,6 @@ while true; do
 
   # Dormimos por 60 segundos antes de verificar novamente
   sleep 60
+  echo "Rodando"
+
 done
