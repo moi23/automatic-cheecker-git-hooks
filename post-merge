@@ -1,0 +1,17 @@
+
+# watch_dir="/path/to/dir"
+watch_dir="/Users/Moises.Boas/Desktop/TAREFAS/ajuda_mano_camoim/android"
+commit_msg="Deu bom e houve alteração nativa"
+
+# Get a list of modified files.
+modified_files=$(git diff-tree -r --name-only --no-commit-id HEAD)
+
+# Check if the modified files include those in the watched directory.
+for file in $modified_files; do
+  if [[ $file =~ $watch_dir ]]; then
+    # Stage all modified files.
+    git add -u
+    # Create a commit with the specified commit message.
+    git commit -m "$commit_msg"
+  fi
+done
